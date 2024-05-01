@@ -28,7 +28,7 @@ for i in range(2, 11):
 
 #find how many quotes have been scraped (should be 100)
 total_quotes = len(quote_data_list)
-print("Total number of quotes scraped:", total_quotes)
+print(f"Total number of quotes scraped: {total_quotes}")
 
 #author analysis 
 author_quotes = {}
@@ -47,6 +47,10 @@ authors_with_one_quote = []
 for author, quote_count in author_quotes.items():
     if quote_count == 1:
         authors_with_one_quote.append(author)
+
+print('Author: Number of Quotes')
+for author, number in author_quotes.items():
+    print(f"{author}: {number}")
 
 print(f"The author with the most quotes is {sorted_authors[0]}")
 print()
@@ -101,8 +105,6 @@ for quote in quote_data_list:
         else:
             tag_counts[tag_text] = 1
 
-
-
 sorted_tags = sorted(tag_counts, key=tag_counts.get, reverse=True)
 
 tag_once = []
@@ -124,6 +126,8 @@ for single_tagger in tag_once:
         break
 else:
     print("There are no more tags")
+
+print(f'The total number of tags is {sum(tag_counts.values())}')
 
 # plotly bar chart with pandas 
 
