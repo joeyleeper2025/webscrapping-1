@@ -113,6 +113,10 @@ for tag, tag_count in tag_counts.items():
     if tag_count == 1:
         tag_once.append(tag)
 
+print('Tag: Number of Occurences')
+for tag , number in tag_counts.items():
+    print(f"{tag}: {number}")
+
 x = 'Y'
 print(f"The most popular tag is {sorted_tags[0]}")
 print()
